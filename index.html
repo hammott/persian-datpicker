@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persian DatePicker</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="persian-datepicker.css">
+    
+    <style>
+        
+        @font-face {
+            font-family: 'shabnam';
+            src: url('font/Shabnam.eot');
+            src: url('font/Shabnam.eot?#iefix') format('FontName-opentype'),
+                 url('font/Shabnam.woff') format('woff'),
+                 url('font/Shabnam.woff2') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        *{
+            direction: rtl;
+            font-family: 'shabnam';
+        }
+        .datepicker-plot-area .datepicker-day-view .table-days td.selected span .datepicker-plot-area .datepicker-day-view .table-days td:hover, .datepicker-plot-area .datepicker-day-view .table-days td span:hover, .datepicker-plot-area .datepicker-year-view .year-item:hover, .datepicker-plot-area .datepicker-month-view .month-item:hover{
+            background-color: orange;
+            border-radius: 5px;
+        }
+        .datepicker-plot-area .datepicker-day-view .table-days td.selected span{
+            background: red;
+            border-radius:5px;
+        }
+        .datepicker-plot-area .datepicker-day-view .table-days td.today span{
+            border-radius:5px; 
+        }
+        .datepicker-plot-area{
+            border-radius:15px;
+            width: 345px;
+            font-size: 15px;
+        }
+        .form-group input{
+            border-radius:50px;
+        }
+        .cardcustom{
+            background:  linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+            padding: 50px;
+            border-radius:25px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-md-center my-5">
+            <div class="col col-md-5 " style="border-radius: 25px;" >
+               <div class="cardcustom">
+                    <form action="" >
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="datepicker" placeholder="تاریخ رفت">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="datepicker2" placeholder="تاریخ برگشت">
+                        </div>
+                        <button type="submit" class="btn btn-primary my-2" style="width: 100%; border-radius:60px">قبول</button>
+                        <div class="detail my-5">
+                            <a href="https://github.com/babakhani/pwt.datepicker">
+                                <button type="button" class="btn btn-danger" style="width: 100%; border-radius:60px"> More Detail</button>
+                            </a>
+                        </div>
+                    </form>
+               </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="jquery-3.5.1.js"></script>
+    <script src="persian-date.js"></script>
+    <script src="persian-datepicker.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#datepicker , #datepicker2 ').persianDatepicker({
+                altField: '#mydate',
+                altFormat: "YYYY/MM/DD",
+                observer: true,
+                format: 'YYYY/MM/DD',
+                initialValue: false,
+                initialValueType: 'persian',
+                autoClose: true,
+                //maxDate: 'today', 
+            });
+        });
+    </script>
+</body>
+</html>
